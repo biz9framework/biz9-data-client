@@ -1,6 +1,6 @@
 import series from 'async/series';
 import assert  from 'assert';
-import {get_item, update_item, delete_item, connect, get_data, post_data } from './';
+import {get_item, update_item, delete_item, connect, get_data, update_data } from './';
 import {get_test_item,w }  from "/home/think1/www/doqbox/biz9-framework/biz9-utility-client/code";
 import {get_cloud_url }  from "/home/think1/www/doqbox/biz9-framework/biz9-adapter-client/code";
 
@@ -77,7 +77,7 @@ test('item_delete', async () => {
 });
 test('get_data', async () => {
     console.log('TEST-BIZ9-DATA-CLIENT-GET-DATA-START');
-    let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'/main/test/ping');
+    let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'/main/test/get');
     let item_test = get_test_item(DATA_TYPE,ID);
     w('cloud_url',cloud_url);
     w('item_test',item_test);
@@ -85,14 +85,14 @@ test('get_data', async () => {
     w('data',data);
     console.log('TEST-BIZ9-DATA-CLIENT-GET-DATA-SUCCESS');
 });
-test('post_data', async () => {
-    console.log('TEST-BIZ9-DATA-CLIENT-POST-DATA-START');
-    let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'main/test/post');
+test('update_data', async () => {
+    console.log('TEST-BIZ9-DATA-CLIENT-UPDATE-DATA-START');
+    let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'/main/test/update');
     let item_test = get_test_item(DATA_TYPE,ID);
     w('cloud_url',cloud_url);
     w('item_test',item_test);
-    const [error,data] = await get_data(cloud_url,item_test);
+    const [error,data] = await update_data(cloud_url,item_test);
     w('data',data);
-    console.log('TEST-BIZ9-DATA-CLIENT-POST-DATA-SUCCESS');
+    console.log('TEST-BIZ9-DATA-CLIENT-UPDATE-DATA-SUCCESS');
 });
 
