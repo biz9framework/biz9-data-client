@@ -1,11 +1,11 @@
 import { connect_adapter,get_item_adapter,update_item_adapter } from './adapter.js';
 
-const connect = async (url) => {
-    const data = await connect_adapter(url);
+const connect = async (url,obj) => {
+    const data = await connect_adapter(url,obj);
     return data;
 };
-const get_item = async (url,obj) => {
-    const [error,data] = await get_item_adapter(url,obj);
+const get_item = async (url) => {
+    const [error,data] = await get_item_adapter(url);
     return [error,data];
 };
 const update_item = async (url,obj) => {

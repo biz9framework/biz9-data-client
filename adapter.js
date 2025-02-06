@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-const connect_adapter = (url) => {
+const connect_adapter = (url,obj) => {
     return new Promise((callback) => {
         axios.get(url, {
-            params: {}
+            params: obj
         })
             .then(function (response) {
-                console.log(response);
                 callback(response);
             })
             .catch(function (error) {
@@ -16,13 +15,13 @@ const connect_adapter = (url) => {
             });
     });
 }
-const get_item_adapter = (url,obj) => {
+const get_item_adapter = (url) => {
     return new Promise((callback) => {
         axios.get(url, {
-            params: obj
+            params: {}
         })
             .then(function (response) {
-                callback([response.data.cloud_error,response.data.cloud_obj]);
+                callback([response.data.cloud_error,response.data.cloud_data]);
             })
             .catch(function (error) {
                 console.log('biz9-apdater-client-get');
@@ -37,7 +36,7 @@ const update_item_adapter = (url,obj) => {
             params: obj
         })
             .then(function (response) {
-                callback([response.data.cloud_error,response.data.cloud_obj]);
+                callback([response.data.cloud_error,response.data.cloud_data]);
             })
             .catch(function (error) {
                 console.log('biz9-apdater-client-update');
