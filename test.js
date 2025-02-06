@@ -1,8 +1,8 @@
 import series from 'async/series';
 import assert  from 'assert';
 import {get_item, update_item, delete_item, connect, get_data, update_data } from './';
-import {get_test_item,w }  from "/home/think1/www/doqbox/biz9-framework/biz9-utility-client/code";
-import {get_cloud_url }  from "/home/think1/www/doqbox/biz9-framework/biz9-adapter-client/code";
+import {get_test_item,w }  from "biz9-utility-client";
+import {get_cloud_url }  from "biz9-adapter-client";
 
 /* --- TEST CONFIG START --- */
 //const ID='0';

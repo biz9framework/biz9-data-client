@@ -12,7 +12,6 @@ const update_item = async (url,obj) => {
     const [error,data] = await update_item_adapter(url,obj);
     return [error,data];
 };
-
 const delete_item = async (url) => {
     const [error,data] = await delete_item_adapter(url);
     return [error,data];
@@ -34,4 +33,3 @@ export {
     delete_item,
     update_item
 }
-
