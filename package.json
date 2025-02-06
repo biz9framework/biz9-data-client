@@ -1,6 +1,6 @@
 {
   "name": "biz9-data-client",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,11 +12,7 @@
     "async": "^3.2.6",
     "axios": "^1.7.9",
     "biz9-adapter": "^1.0.13",
-    "biz9-adapter-client": "^1.0.11",
-    "biz9-adapter-server": "^1.0.11",
-    "biz9-scriptz": "^5.2.13",
-    "biz9-utility": "^1.0.42",
-    "biz9-utility-client": "^1.0.37",
-    "biz9-utility-server": "^1.0.40"
+    "biz9-scriptz": "^5.2.14",
+    "biz9-utility": "^1.0.42"
   }
 }
