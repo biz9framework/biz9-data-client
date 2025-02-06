@@ -1,9 +1,10 @@
-import series from 'async/series';
-import assert  from 'assert';
-import {get_item, update_item, delete_item, connect, get_data, update_data } from './';
-import {get_test_item,w }  from "biz9-utility-client";
-import {get_cloud_url }  from "biz9-adapter-client";
+const series = require('async/series');
+const assert  = require('assert');
+const {get_item, update_item, delete_item, connect, get_data, update_data } = require('./');
+const {get_test_item,w } = require("biz9-utility");
+const {get_cloud_url }  = require("biz9-adapter");
 
+//
 /* --- TEST CONFIG START --- */
 //const ID='0';
 const ID='e91e3d97-87fe-4ca5-a700-59639c498631';
