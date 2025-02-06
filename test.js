@@ -6,8 +6,8 @@ import {get_cloud_url }  from "/home/think1/www/doqbox/biz9-framework/biz9-adapt
 
 /* --- TEST CONFIG START --- */
 //const ID='0';
-const ID='c008b817-1c20-40b6-b6b4-010684bda9b2';
-const APP_TITLE_ID='feb05';
+const ID='ca5bea0c-fc64-44ee-8fba-123b5a0aeb96';
+const APP_TITLE_ID='feb6c';
 const DATA_TYPE='dt_blank';
 const PORT_ID="1901";
 const TEST_URL="https://microsoftedge.github.io/Demos/json-dummy-data/64KB.json";
@@ -48,9 +48,9 @@ test('item_update', async () => {
     console.log('TEST-BIZ9-DATA-CLIENT-UPDATE-ITEM-START');
     let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'/main/crud/update/'+DATA_TYPE+"/"+ID);
     let item_test = get_test_item(DATA_TYPE,ID);
-    const [error,data] = await update_item(cloud_url,item_test);
-    w('item_test',item_test);
     w('cloud_url',cloud_url);
+    w('item_test',item_test);
+    const [error,data] = await update_item(cloud_url,item_test);
     w('data',data);
     assert.strictEqual(item_test.first_name,data.item.first_name);
     assert.strictEqual(item_test.title,data.item.title);
@@ -59,9 +59,11 @@ test('item_update', async () => {
 test('item_get', async () => {
     console.log('TEST-BIZ9-DATA-CLIENT-GET-ITEM-START');
     let cloud_url = get_cloud_url(biz9_config.APP_TITLE_ID,CLOUD_URL,'/main/crud/get/'+DATA_TYPE+"/"+ID);
-    w('cloud_url',cloud_url);
     const [error,data] = await get_item(cloud_url);
     w('data',data);
+    w('cloud_url',cloud_url);
+    assert.notStrictEqual(data.item.first_name,null);
+
     //assert.strictEqual(item_test.first_name,data.item.first_name);
     //assert.strictEqual(item_test.title,data.item.title);
     //console.log('TEST-BIZ9-DATA-CLIENT-UPDATE-ITEM-SUCCESS');
