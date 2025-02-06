@@ -1,4 +1,4 @@
-import { connect_adapter,get_item_adapter,update_item_adapter } from './adapter.js';
+import { connect_adapter,get_item_adapter,update_item_adapter,delete_item_adapter,get_data_adapter,post_data_adapter } from './adapter.js';
 
 const connect = async (url,obj) => {
     const data = await connect_adapter(url,obj);
@@ -13,9 +13,25 @@ const update_item = async (url,obj) => {
     return [error,data];
 };
 
+const delete_item = async (url) => {
+    const [error,data] = await delete_item_adapter(url);
+    return [error,data];
+};
+const get_data = async (url,obj) => {
+    const [error,data] = await get_data_adapter(url,obj);
+    return [error,data];
+};
+const post_data = async (url,obj) => {
+    const [error,data] = await post_data_adapter(url,obj);
+    return [error,data];
+};
+
 export {
     connect,
     get_item,
+    get_data,
+    post_data,
+    delete_item,
     update_item
 }
 
