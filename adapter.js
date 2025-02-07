@@ -3,10 +3,10 @@ const axios = require('axios');
 const connect_adapter = (url,obj) => {
     return new Promise((callback) => {
         axios.get(url, {
-            params: obj
+            data: obj
         })
             .then(function (response) {
-                callback(response);
+                callback([response.data.cloud_error,response.data.cloud_data]);
             })
             .catch(function (error) {
                 console.log('biz9-apdater-client-connect');
@@ -33,7 +33,7 @@ const get_item_adapter = (url) => {
 const update_item_adapter = (url,obj) => {
     return new Promise((callback) => {
         axios.post(url, {
-            params: obj
+            data: obj
         })
             .then(function (response) {
                 callback([response.data.cloud_error,response.data.cloud_data]);
