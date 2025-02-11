@@ -1,6 +1,6 @@
 {
   "name": "biz9-data-client",
-  "version": "1.0.11",
+  "version": "1.2.2",
   "description": "**The BiZ9-Data-Client Package**",
   "main": "index.js",
   "scripts": {
